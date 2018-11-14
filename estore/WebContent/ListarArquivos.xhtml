@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Lista de Arquivos</title>
+
+        <h:outputStylesheet library="css" name="sistema.css"/>
+    </h:head>
+
+<h:form>
+	<h1>Pesquisa produtos</h1>
+
+	<p:toolbar style="margin-top: 20px">
+		<p:toolbarGroup align="right">
+			<p:button value="Novo" outcome="CadastroArquivo.xhtml" />
+		</p:toolbarGroup>
+	</p:toolbar>
+
+	<p:dataTable id="produtosTable" value="#{listarArquivosBean.arquivos}"
+		var="arquivos" style="margin-top: 20px"
+		emptyMessage="Nenhum produto encontrado." rows="20" paginator="true"
+		paginatorAlwaysVisible="false" paginatorPosition="bottom">
+		<p:column headerText="SKU" style="text-align: center; width: 100px">
+			<h:outputText value="123" />
+		</p:column>
+		<p:column headerText="Id">
+			<h:outputText value="#{arquivos.id}" />
+		</p:column>
+		<p:column headerText="Nome do arquivo" style="width: 250px">
+			<h:outputText value="#{arquivos.fileName}" />
+		</p:column>
+		<p:column headerText="Data" style="text-align: right; width: 120px">
+			<h:outputText value="#{arquivos.created}" />
+		</p:column>
+		<p:column headerText="Descrição"
+			style="text-align: center; width: 100px">
+			<h:outputText value="#{arquivos.description}" />
+		</p:column>
+		<p:column style="width: 100px; text-align: center">
+			<p:button icon="ui-icon-pencil" title="Editar" />
+			<p:commandButton icon="ui-icon-trash" title="Excluir" />
+		</p:column>
+	</p:dataTable>
+</h:form>
+
+</html>
