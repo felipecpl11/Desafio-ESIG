@@ -68,20 +68,8 @@ public class ServiceArquivo implements Serializable {
 		headers.add("Authorization", "Basic " + encoding);
 
 		MultiValueMap<String, Object> body = new LinkedMultiValueMap<>();		
-		/*
-		ByteArrayResource contentsAsResource = new ByteArrayResource(uploadedFile.getContents()){
-            @Override
-            public String getFilename(){
-                return uploadedFile.getFileName();
-            }
-            
-            
-        };
-        */
-		//body.add("file", new ClassPathResource());
 		body.add("file", uploadToPost(uploadedFile));
-		//body.add("filde", getTestFile(uploadedFile));
-		body.add("usuarioLogin", "Administrador");
+		body.add("usuarioLogin", usuarioBean.getUsuario().getLogin());
 		body.add("path", "Caminho qualquer");
 
 		HttpEntity<MultiValueMap<String, Object>> requestEntity = new HttpEntity<>(body, headers);

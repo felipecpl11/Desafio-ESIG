@@ -1,0 +1,4 @@
+1.	Executar o SQL presente na pasta SQL no BD MySQL
+2.	Executar o projeto mindropbox-api (projeto desenvolvido utilizando a IDE do Spring)
+3.	Executar o projeto estore (desenvolvido utilzando o eclipse) e executar um servidor com o projeto. (tentar acessar localhost:porta//estore/)
+4.	Fazer login com o usuário admin/admin ou maria/maria
